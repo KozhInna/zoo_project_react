@@ -24,9 +24,6 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -66,4 +63,24 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+.footer {
+  background-color: aqua;
+  height: 20px;
+}
+.header {
+  background-color: aqua;
+  height: 20px;
+}
+.animalCard {
+  border: 1px solid black;
+  border-radius: 15px;
+}
+.animalImg {
+  max-width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+.animalCard {
+  width: 15rem;
+  width: 15rem;
 }
