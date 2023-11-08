@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -63,24 +63,76 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto Mono", sans-serif;
+  color: #252525;
+  font-weight: 400;
+  background-color: #f7f2e9;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+}
+
 .footer {
   background-color: aqua;
   height: 20px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 .header {
+  align-self: stretch;
   background-color: aqua;
   height: 20px;
+}
+.cards {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2%;
 }
 .animalCard {
   border: 1px solid black;
   border-radius: 15px;
 }
-.animalImg {
-  max-width: 100%;
+.image {
+  width: 100%;
+  display: block;
   border-radius: 15px 15px 0 0;
 }
 .animalCard {
+  position: relative;
   width: 15rem;
   width: 15rem;
+}
+.close {
+  background-color: aliceblue;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+.details {
+  text-align: center;
 }

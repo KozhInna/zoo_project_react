@@ -1,19 +1,25 @@
-const Card = (props) => {
+const Card = ({ name, likes, click }) => {
   return (
-    <div className="animalCard">
+    <li className="animalCard">
       {" "}
       <img
-        className="animalImg"
-        src="https://source.unsplash.com/random/"
-        alt=""
+        className="image"
+        src={`https://source.unsplash.com/400x400/?${name}`}
+        alt={name}
       />
-      <h2>Animal name</h2>
-      <button>close</button>
-      <button>-</button>
-      <span className="material-symbols-outlined">favorite</span>
-      <span className="material-symbols-outlined">heart_broken</span>
-      <button>+</button>
-    </div>
+      <div className="details">
+        <h2>{name}</h2>
+        <button onClick={click}>
+          <span className="material-symbols-outlined close">close</span>
+        </button>
+
+        <button>-</button>
+        <span className="material-symbols-outlined">favorite</span>
+        <span>{likes}</span>
+        <span className="material-symbols-outlined">heart_broken</span>
+        <button>+</button>
+      </div>
+    </li>
   );
 };
 
