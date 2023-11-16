@@ -120,7 +120,7 @@ export const animals = [
   { name: "zebra", likes: 0 },
 ];
 export const birds = [
-  { name: "Sparrow", likes: 1 },
+  { name: "Sparrow", likes: 0 },
   { name: "Starling", likes: 0 },
   { name: "Pigeon", likes: 0 },
   { name: "Dove", likes: 0 },
@@ -145,7 +145,6 @@ export const birds = [
   { name: "Osprey", likes: 0 },
   { name: "Eagle", likes: 0 },
   { name: "Killdeer", likes: 0 },
-  { name: "Goldfinch", likes: 0 },
   { name: "Magpie", likes: 0 },
   { name: "Collared Dove", likes: 0 },
   { name: "Blue Tit", likes: 0 },

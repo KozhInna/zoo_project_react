@@ -1,7 +1,6 @@
-const Card = ({ name, likes, click }) => {
+const Card = ({ name, likes, click, addLikes, removeLikes }) => {
   return (
     <li className="animalCard">
-      {" "}
       <img
         className="image"
         src={`https://source.unsplash.com/400x400/?${name}`}
@@ -13,11 +12,20 @@ const Card = ({ name, likes, click }) => {
           <span className="material-symbols-outlined close">close</span>
         </button>
 
-        <button>-</button>
-        <span className="material-symbols-outlined">favorite</span>
-        <span>{likes}</span>
-        <span className="material-symbols-outlined">heart_broken</span>
-        <button>+</button>
+        <button onClick={removeLikes}>
+          <span className="material-symbols-outlined">heart_minus</span>
+        </button>
+
+        <div className="likes_container">
+          <span className="likes">{likes}</span>
+          <span className="material-symbols-outlined">
+            {likes >= 0 ? "favorite" : "heart_broken"}
+          </span>
+        </div>
+
+        <button onClick={addLikes}>
+          <span className="material-symbols-outlined">heart_plus</span>
+        </button>
       </div>
     </li>
   );
