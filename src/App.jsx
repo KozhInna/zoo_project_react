@@ -1,10 +1,12 @@
-import Footer from "./Footer";
-import Header from "./Header";
 import { useState } from "react";
-import Card from "./Card";
+import { animals, birds } from "./animalsList"; //named export
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-//named export
-import { animals, birds } from "./animalsList";
+import Home from "./routes/Home";
+import Root from "./routes/Root";
+import Birds from "./routes/Birds";
+import Animals from "./routes/Animals";
+import About from "./routes/About";
 
 function App() {
   const [animalList, setAnimals] = useState(animals);
@@ -53,18 +55,57 @@ function App() {
     });
     setAnimals(updatedArr2);
   }
+  /*  const filteredBirds = birdList.filter((bird) =>
+    bird.name.toLowerCase().includes(search)
+  ); */
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      children: [
+        { path: "/", element: <Home /> },
+        {
+          path: "/animals",
+          element: (
+            <Animals
+              removeFunction={removeFunction}
+              animalList={animalList}
+              search={search}
+              likeHandler={likeHandler}
+              searchHandler={searchHandler}
+            />
+          ),
+        },
+        {
+          path: "/birds",
+          element: (
+            <Birds
+              removeFunction={removeFunction}
+              birdList={birdList}
+              search={search}
+              likeHandler={likeHandler}
+              searchHandler={searchHandler}
+            />
+          ),
+        },
+        { path: "/about", element: <About /> },
+      ],
+    },
+  ]);
+
   return (
     <>
-      <div className="container">
+      <RouterProvider router={router} />
+      {/*       <div className="container">
         <Header onchange={searchHandler} />
         <main>
           <h1>Animals</h1>
 
           <ul className="cards">
             {" "}
-            {birdList
-              .filter((bird) => bird.name.toLowerCase().includes(search))
-              .map((bird) => (
+            {filteredBirds.length !== 0 ? (
+              filteredBirds.map((bird) => (
                 <Card
                   {...bird}
                   key={bird.name}
@@ -72,7 +113,12 @@ function App() {
                   addLikes={() => likeHandler(bird.name, "add")}
                   removeLikes={() => likeHandler(bird.name, "remove")}
                 />
-              ))}
+              ))
+            ) : (
+              <ul style={{ gridTemplateColumns: "1" }}>
+                Ups, there is no such a creature in our collection. Try again.
+              </ul>
+            )}
             {animalList
               .filter((animal) => animal.name.toLowerCase().includes(search))
               .map((animal) => (
@@ -87,7 +133,7 @@ function App() {
           </ul>
         </main>
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 }
