@@ -1,0 +1,23 @@
+.header {
+  align-self: stretch;
+  background-color: #ffebb3;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: end;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.header a:link {
+  text-decoration: none;
+  color: inherit;
+}
+.active-class {
+  background-color: grey;
+}

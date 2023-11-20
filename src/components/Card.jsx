@@ -1,3 +1,5 @@
+import styles from "./Card.module.css";
+
 const Card = ({ name, likes, click, addLikes, removeLikes }) => {
   return (
     <li className="animalCard">

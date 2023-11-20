@@ -1,0 +1,31 @@
+.containerFrontpage {
+  display: flex;
+  height: 100vh;
+}
+
+.animalsFrontpage,
+.birdsFrontpage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  background-color: aqua;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.animalsFrontpage a,
+.birdsFrontpage a {
+  text-decoration: none;
+}
+.animalsFrontpage {
+  background-image: url(../animalsFront.jpg);
+  background-size: cover;
+  height: 100%;
+  background-position: center;
+}
+.birdsFrontpage {
+  background-image: url(../birdsFront.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
