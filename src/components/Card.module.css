@@ -1,0 +1,17 @@
+#closeCard:hover {
+  cursor: pointer;
+}
+.likesInfoBox {
+  display: flex;
+
+  justify-content: center;
+  gap: 1%;
+}
+.likesInfoBox button {
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+}
+.likesInfoBox button:hover {
+  cursor: pointer;
+}

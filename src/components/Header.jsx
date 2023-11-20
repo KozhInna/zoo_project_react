@@ -6,6 +6,7 @@ const Header = () => {
   const { pathname } = useLocation();
 
   if (pathname === "/") return null;
+
   return (
     <header className={styles.header}>
       <h1>Zoo app</h1>
@@ -13,12 +14,12 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/" activeClassName="active">
-              Home
-            </NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/animals">Animals</NavLink>
+            <NavLink exact activeClassName={styles.active} to="/animals">
+              Animals
+            </NavLink>
           </li>
           <li>
             <NavLink to="/birds">Birds</NavLink>
