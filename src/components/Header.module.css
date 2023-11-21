@@ -15,10 +15,11 @@
   font-size: 1.5rem;
   font-weight: 500;
 }
-.header a:link {
+.header a {
   text-decoration: none;
   color: inherit;
 }
-.active {
+.header a.active {
   background-color: grey;
+  border-color: 1px solid blanchedalmond;
 }

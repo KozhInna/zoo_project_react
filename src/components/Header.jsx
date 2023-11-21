@@ -17,9 +17,7 @@ const Header = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink exact activeClassName={styles.active} to="/animals">
-              Animals
-            </NavLink>
+            <NavLink to="/animals">Animals</NavLink>
           </li>
           <li>
             <NavLink to="/birds">Birds</NavLink>

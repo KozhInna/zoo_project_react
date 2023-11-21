@@ -11,6 +11,9 @@
   border: none;
   border-radius: 50%;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .likesInfoBox button:hover {
   cursor: pointer;

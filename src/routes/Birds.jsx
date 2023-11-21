@@ -55,9 +55,12 @@ function Birds({
               />
             ))
           ) : (
-            <p>
-              Ups, there is no such a creature in our collection. Try again.
-            </p>
+            <ul>
+              Ups, not found{" "}
+              <span className="material-symbols-outlined">
+                sentiment_dissatisfied
+              </span>
+            </ul>
           )}
         </ul>
       </div>

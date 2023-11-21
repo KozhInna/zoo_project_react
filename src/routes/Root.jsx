@@ -2,7 +2,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { Outlet } from "react-router-dom";
 
-function Rout() {
+function Root() {
   return (
     <>
       <Header />
@@ -11,4 +11,4 @@ function Rout() {
     </>
   );
 }
-export default Rout;
+export default Root;

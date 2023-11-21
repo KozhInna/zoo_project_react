@@ -7,13 +7,12 @@ import Root from "./routes/Root";
 import Birds from "./routes/Birds";
 import Animals from "./routes/Animals";
 import About from "./routes/About";
+import SingleAnimal from "./routes/SingleAnimal";
 
 function App() {
   const [animalList, setAnimals] = useState(animals);
   const [birdList, setBirds] = useState(birds);
   const [search, setSearch] = useState("");
-  /* const [hearts, setHearts] = useState(birds.likes); */
-  /*   const [likesM, setLikes] = useState(animals.likes); */
 
   function removeFunction(name) {
     const updatedArray = birdList.filter((bird) => bird.name !== name);
@@ -25,6 +24,9 @@ function App() {
   function searchHandler(e) {
     setSearch(e.target.value.toLowerCase());
   }
+  /*  function resetSearch() {
+    setSearch("");
+  } */
 
   function likeHandler(name, action) {
     const updatedArr = birdList.map((bird) => {
@@ -55,9 +57,6 @@ function App() {
     });
     setAnimals(updatedArr2);
   }
-  /*  const filteredBirds = birdList.filter((bird) =>
-    bird.name.toLowerCase().includes(search)
-  ); */
 
   const router = createBrowserRouter([
     {
@@ -66,11 +65,17 @@ function App() {
       children: [
         { path: "/", element: <Home /> },
         {
-          path: "/animals",
+          path: "/animals/:name",
+          element: <SingleAnimal animalList={animalList} />,
+        },
+        { path: "/birds/:name", element: <SingleAnimal birdList={birdList} /> },
+
+        {
+          path: "/birds",
           element: (
-            <Animals
+            <Birds
               removeFunction={removeFunction}
-              animalList={animalList}
+              birdList={birdList}
               search={search}
               likeHandler={likeHandler}
               searchHandler={searchHandler}
@@ -78,11 +83,11 @@ function App() {
           ),
         },
         {
-          path: "/birds",
+          path: "/animals",
           element: (
-            <Birds
+            <Animals
               removeFunction={removeFunction}
-              birdList={birdList}
+              animalList={animalList}
               search={search}
               likeHandler={likeHandler}
               searchHandler={searchHandler}

@@ -1,4 +1,6 @@
+/* import { NavLink } from "react-router-dom"; */
 import styles from "./Card.module.css";
+import { Link } from "react-router-dom";
 
 const Card = ({ name, likes, click, addLikes, removeLikes }) => {
   return (
@@ -13,7 +15,6 @@ const Card = ({ name, likes, click, addLikes, removeLikes }) => {
 
       <div className="details">
         <h2>{name}</h2>
-
         <span
           id={styles.closeCard}
           onClick={click}
@@ -37,6 +38,7 @@ const Card = ({ name, likes, click, addLikes, removeLikes }) => {
             <span className="material-symbols-outlined">heart_plus</span>
           </button>
         </div>
+        <Link to={name}>See more</Link>
       </div>
     </li>
   );
