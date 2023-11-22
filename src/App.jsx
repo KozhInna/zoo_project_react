@@ -8,6 +8,7 @@ import Birds from "./routes/Birds";
 import Animals from "./routes/Animals";
 import About from "./routes/About";
 import SingleAnimal from "./routes/SingleAnimal";
+/* import CategoryPage from "./routes/CategoryPage"; */
 
 function App() {
   const [animalList, setAnimals] = useState(animals);
@@ -24,9 +25,9 @@ function App() {
   function searchHandler(e) {
     setSearch(e.target.value.toLowerCase());
   }
-  /*  function resetSearch() {
+  function resetSearch() {
     setSearch("");
-  } */
+  }
 
   function likeHandler(name, action) {
     const updatedArr = birdList.map((bird) => {
@@ -61,7 +62,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root />,
+      element: <Root resetSearch={resetSearch} />,
       children: [
         { path: "/", element: <Home /> },
         {
