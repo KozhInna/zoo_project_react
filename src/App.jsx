@@ -8,6 +8,7 @@ import Birds from "./routes/Birds";
 import Animals from "./routes/Animals";
 import About from "./routes/About";
 import SingleAnimal from "./routes/SingleAnimal";
+import SingleBird from "./routes/SingleBird";
 /* import CategoryPage from "./routes/CategoryPage"; */
 
 function App() {
@@ -69,7 +70,7 @@ function App() {
           path: "/animals/:name",
           element: <SingleAnimal animalList={animalList} />,
         },
-        { path: "/birds/:name", element: <SingleAnimal birdList={birdList} /> },
+        { path: "/birds/:name", element: <SingleBird birdList={birdList} /> },
 
         {
           path: "/birds",

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 
@@ -9,7 +9,10 @@ const Header = ({ resetSearch }) => {
 
   return (
     <header className={styles.header}>
-      <h1>Zoo app</h1>
+      <h1>
+        {" "}
+        <Link to="/">Zoo app</Link>
+      </h1>
 
       <nav>
         <ul>

@@ -1,0 +1,19 @@
+.goBackBtn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  width: 30%;
+
+  font-family: inherit;
+  font-size: inherit;
+}
+.oneAnimalBox {
+  padding: 2rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+h2 {
+  text-align: center;
+}

@@ -6,7 +6,7 @@
 .animalsFrontpage,
 .birdsFrontpage {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   width: 50%;
 
@@ -19,14 +19,18 @@
   color: #000;
 }
 .animalsFrontpage {
-  background-image: url(../animalsFront.jpg);
+  background-image: url("https://source.unsplash.com/random/?bear");
   background-size: cover;
   height: 100%;
   background-position: center;
 }
 .birdsFrontpage {
-  background-image: url(../birdsFront.jpg);
+  background-image: url("https://source.unsplash.com/random/?owl");
   background-position: center;
   background-size: cover;
   height: 100%;
+}
+.animalsFrontpage a:hover,
+.birdsFrontpage a:hover {
+  color: blue;
 }
