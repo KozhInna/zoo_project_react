@@ -14,7 +14,7 @@ const Header = ({ resetSearch }) => {
         <Link to="/">Zoo app</Link>
       </h1>
 
-      <nav>
+      <nav className={styles.nav}>
         <ul>
           <li>
             <NavLink to="/">Home</NavLink>

@@ -19,7 +19,6 @@
   text-decoration: none;
   color: inherit;
 }
-.header a.active {
-  background-color: grey;
-  border-color: 1px solid blanchedalmond;
+.nav :global(.active) {
+  border-bottom: 2px solid black;
 }

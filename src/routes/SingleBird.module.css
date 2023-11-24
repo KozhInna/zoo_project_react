@@ -1,14 +1,14 @@
-.oneAnimalBox {
+.oneBirdBox {
   padding: 2rem;
   min-height: calc(100vh - 5rem);
 }
-.oneAnimalBox section {
+.oneBirdBox section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 6rem;
 }
-.oneAnimalBox img {
+.oneBirdBox img {
   width: 100%;
 }
 
