@@ -11,7 +11,7 @@ const Header = ({ resetSearch }) => {
     <header className={styles.header}>
       <h1>
         {" "}
-        <Link to="/">Zoo app</Link>
+        <Link to="/">ZOO app</Link>
       </h1>
 
       <nav className={styles.nav}>

@@ -3,6 +3,7 @@ import styles from "./SingleAnimal.module.css";
 
 const SingleAnimal = ({ animalList }) => {
   const params = useParams();
+  console.log(params);
 
   const data = animalList.find((el) => el.name === params.name);
   console.log(data);

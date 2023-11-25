@@ -2,7 +2,7 @@
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 
-const Card = ({ name, likes, click, addLikes, removeLikes }) => {
+const Card = ({ name, likes, click, addLikes, removeLikes, id }) => {
   return (
     <li className="animalCard">
       <div>
@@ -38,7 +38,7 @@ const Card = ({ name, likes, click, addLikes, removeLikes }) => {
             <span className="material-symbols-outlined">heart_plus</span>
           </button>
         </div>
-        <Link to={name}>See more</Link>
+        <Link to={`${name}`}>See more</Link>
       </div>
     </li>
   );

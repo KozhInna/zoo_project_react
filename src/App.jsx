@@ -69,10 +69,10 @@ function App() {
       children: [
         { path: "/", element: <Home /> },
         {
-          path: "/animals/:name",
+          path: "animals/:name",
           element: <SingleAnimal animalList={animalList} />,
         },
-        { path: "/birds/:name", element: <SingleBird birdList={birdList} /> },
+        { path: "birds/:name", element: <SingleBird birdList={birdList} /> },
 
         {
           path: "/birds",
