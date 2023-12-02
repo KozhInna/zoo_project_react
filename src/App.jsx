@@ -1,5 +1,4 @@
 import { useState } from "react";
-/* import { animals, birds } from "./animalsList"; //named export */
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Home from "./routes/Home";
@@ -7,7 +6,7 @@ import Root from "./routes/Root";
 import About from "./routes/About";
 import PageNotFound from "./routes/PageNotFound";
 import CategoryPage from "./routes/CategoryPage";
-/* import SinglePage from "./routes/CategoryPage"; */
+import SinglePage from "./routes/CategoryPage";
 
 const animals = [
   { name: "alligator", likes: 0 },
@@ -73,37 +72,8 @@ function App() {
             />
           ),
         },
-        /*  { path: ":category/:name", element: <SinglePage {...zoo} /> }, */
+        { path: ":category/:name", element: <SinglePage {...zoo} /> },
 
-<<<<<<< HEAD
-        {
-          path: "/birds",
-          element: (
-            <Birds
-              removeFunction={removeFunction}
-              birdList={birdList}
-              search={search}
-              likeHandler={likeHandler}
-              searchHandler={searchHandler}
-            />
-          ),
-        },
-        {
-          path: "/animals",
-          element: (
-            <Animals
-              removeFunction={removeFunction}
-              animalList={animalList}
-              search={search}
-              likeHandler={likeHandler}
-              searchHandler={searchHandler}
-            />
-          ),
-        },
-        /*  { path: ":category/:name", element: <SinglePage {...zoo} /> }, */
-
-=======
->>>>>>> a203fb122c7b498b747beb11eceacdc15ea0b1c0
         { path: "/about", element: <About /> },
       ],
     },

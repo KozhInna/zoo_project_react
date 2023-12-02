@@ -1,16 +1,7 @@
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-const Card = ({ name, likes, click, addLikes, removeLikes, id }) => {
-=======
 const Card = ({ name, likes, click, addLikes, removeLikes }) => {
->>>>>>> Stashed changes
-=======
-const Card = ({ name, likes, click, addLikes, removeLikes }) => {
-  console.log(name, likes);
->>>>>>> a203fb122c7b498b747beb11eceacdc15ea0b1c0
   return (
     <li className={styles.card}>
       <div>
