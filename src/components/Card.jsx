@@ -1,8 +1,11 @@
-/* import { NavLink } from "react-router-dom"; */
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 
+<<<<<<< Updated upstream
 const Card = ({ name, likes, click, addLikes, removeLikes, id }) => {
+=======
+const Card = ({ name, likes, click, addLikes, removeLikes }) => {
+>>>>>>> Stashed changes
   return (
     <li className="animalCard">
       <div>
@@ -29,7 +32,7 @@ const Card = ({ name, likes, click, addLikes, removeLikes, id }) => {
 
           <div className="likes_container">
             <span className="likes">{likes}</span>
-            <span className="material-symbols-outlined">
+            <span className="material-symbols-outlined hearts">
               {likes >= 0 ? "favorite" : "heart_broken"}
             </span>
           </div>

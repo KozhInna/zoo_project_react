@@ -10,7 +10,21 @@ import About from "./routes/About";
 import SingleAnimal from "./routes/SingleAnimal";
 import SingleBird from "./routes/SingleBird";
 import PageNotFound from "./routes/PageNotFound";
-/* import CategoryPage from "./routes/CategoryPage"; */
+import CategoryPage from "./routes/CategoryPage";
+/* import SinglePage from "./routes/CategoryPage"; */
+
+const animals = [
+  { name: "alligator", likes: 0 },
+  { name: "alpaca", likes: 0 },
+  { name: "ant", likes: 0 },
+  { name: "anteater", likes: 0 },
+];
+const birds = [
+  { name: "Sparrow", likes: 0 },
+  { name: "Starling", likes: 0 },
+  { name: "Pigeon", likes: 0 },
+  { name: "Dove", likes: 0 },
+];
 
 function App() {
   const [animalList, setAnimals] = useState(animals);
@@ -98,6 +112,8 @@ function App() {
             />
           ),
         },
+        /*  { path: ":category/:name", element: <SinglePage {...zoo} /> }, */
+
         { path: "/about", element: <About /> },
       ],
     },

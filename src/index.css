@@ -85,3 +85,6 @@ input {
 button {
   display: inline;
 }
+.hearts {
+  color: red;
+}
