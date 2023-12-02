@@ -37,7 +37,9 @@ const Card = ({ name, likes, click, addLikes, removeLikes }) => {
             <span className="material-symbols-outlined">heart_plus</span>
           </button>
         </div>
-        <Link to={`${name}`}>See more</Link>
+        <Link to={`${name}`} className={styles.seeMoreLink}>
+          See more
+        </Link>
       </div>
     </li>
   );

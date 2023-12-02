@@ -1,25 +1,12 @@
 import { useState } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
+import { animals, birds } from "./animalsList";
 import Home from "./routes/Home";
 import Root from "./routes/Root";
 import About from "./routes/About";
 import PageNotFound from "./routes/PageNotFound";
 import CategoryPage from "./routes/CategoryPage";
-import SinglePage from "./routes/CategoryPage";
-
-const animals = [
-  { name: "alligator", likes: 0 },
-  { name: "alpaca", likes: 0 },
-  { name: "ant", likes: 0 },
-  { name: "anteater", likes: 0 },
-];
-const birds = [
-  { name: "Sparrow", likes: 0 },
-  { name: "Starling", likes: 0 },
-  { name: "Pigeon", likes: 0 },
-  { name: "Dove", likes: 0 },
-];
+import SinglePage from "./routes/SinglePage";
 
 function App() {
   const [zoo, setZoo] = useState({ animals: animals, birds: birds });

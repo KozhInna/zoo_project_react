@@ -1,23 +1,26 @@
 import { useNavigate, useParams } from "react-router-dom";
-import styles from "./SingleBird.module.css";
+import styles from "./SinglePage.module.css";
 
-const SingleBird = (props) => {
-  const params = useParams();
-  const category = params;
+const SinglePage = (props) => {
+  /*  console.log(props); */
+  const urlParams = useParams();
+  /*  console.log("params", urlParams); */
+  const category = props[urlParams.category];
+  /*   console.log("category", category); */
 
-  const data = props[category].find((el) => el.name === params.name);
+  const data = category.find((el) => el.name === urlParams.name);
 
   const navigate = useNavigate();
   return (
     <>
-      <main className={styles.oneBirdBox}>
+      <main className={styles.oneAnimalBox}>
         <section>
           <div>
             <h2>{data.name.toUpperCase()}</h2>
 
             <div className={styles.likes}>
               <span className="likes">{data.likes}</span>
-              <span className="material-symbols-outlined">
+              <span className="material-symbols-outlined hearts">
                 {data.likes >= 0 ? "favorite" : "heart_broken"}
               </span>
             </div>
@@ -35,7 +38,6 @@ const SingleBird = (props) => {
               tenetur dolorem dignissimos obcaecati. Esse, quia.
             </p>
             <button className={styles.goBackBtn} onClick={() => navigate(-1)}>
-              {" "}
               Go back
             </button>
           </div>
@@ -50,4 +52,4 @@ const SingleBird = (props) => {
   );
 };
 
-export default SingleBird;
+export default SinglePage;

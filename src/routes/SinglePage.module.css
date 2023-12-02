@@ -9,20 +9,46 @@
   gap: 6rem;
 }
 .oneAnimalBox img {
-  width: 100%;
+  width: 90%;
 }
 
 .goBackBtn {
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #ffebb3;
   border: none;
   font-family: inherit;
-  font-size: inherit;
+  text-align: center;
+  font-size: 1.2rem;
   margin-top: 3rem;
-}
-.goBackBtn:hover {
+  width: 150px;
   cursor: pointer;
+  transition: all 0.5s;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
 }
+.goBackBtn {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.goBackBtn:hover {
+  padding-left: 24px;
+  padding-right: 8px;
+}
+.goBackBtn:after {
+  content: "《";
+  position: absolute;
+  opacity: 0;
+  top: 9px;
+  left: -10px;
+  transition: 0.5s;
+}
+.goBackBtn:hover:after {
+  opacity: 1;
+  left: 5px;
+}
+
 .likes {
   margin-bottom: 2rem;
 }

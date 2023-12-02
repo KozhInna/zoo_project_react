@@ -4,18 +4,18 @@ import Card from "../components/Card";
 import { useState } from "react";
 
 function CategoryPage(props) {
-  console.log("props", props);
+  /*   console.log("props", props); */
   const urlParams = useParams();
-  console.log("url", urlParams);
-  const category = props[urlParams.category];
-  console.log("category", category);
-
+  /*   console.log("url", urlParams);
+   */ const category = props[urlParams.category];
+  /*   console.log("category", category);
+   */
   const filteredArray = category.filter((el) =>
     el.name.toLowerCase().includes(props.search)
   );
 
-  console.log("filteredArray", filteredArray);
-  const [quantity, setQuantity] = useState(5);
+  /*   console.log("filteredArray", filteredArray);
+   */ const [quantity, setQuantity] = useState(5);
   return (
     <>
       <div className={styles.cardsContainer}>
@@ -48,7 +48,6 @@ function CategoryPage(props) {
           className="cards"
           style={{ gridTemplateColumns: `repeat(${quantity}, 1fr)` }}
         >
-          {" "}
           {filteredArray.length !== 0 ? (
             filteredArray.map((el) => (
               <Card
