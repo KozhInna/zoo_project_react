@@ -6,10 +6,10 @@ function Home() {
     <>
       <div className={styles.containerFrontpage}>
         <div className={styles.animalsFrontpage}>
-          <Link to="/Animals">Animals</Link>
+          <Link to="/animals">Animals</Link>
         </div>
         <div className={styles.birdsFrontpage}>
-          <Link to="/Birds">Birds</Link>
+          <Link to="/birds">Birds</Link>
         </div>
       </div>
     </>

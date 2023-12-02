@@ -1,23 +1,28 @@
+import { useParams } from "react-router-dom";
+import styles from "./CategoryPage.module.css";
+
+/* import styles from "./Animals.module.css"; */
 import Card from "../components/Card";
-import styles from "./Animals.module.css";
 import { useState } from "react";
 
-function Animals({
-  search,
-  removeFunction,
-  likeHandler,
-  animalList,
-  searchHandler,
-}) {
-  const filteredAnimals = animalList.filter((animal) =>
-    animal.name.toLowerCase().includes(search)
+function CategoryPage(props) {
+  console.log("props", props);
+  const urlParams = useParams();
+  console.log("url", urlParams);
+  const category = props[urlParams.category];
+  console.log("category", category);
+
+  const filteredArray = category.filter((el) =>
+    el.name.toLowerCase().includes(props.search)
   );
+
+  console.log("filteredArray", filteredArray);
   const [quantity, setQuantity] = useState(5);
   return (
     <>
-      <div className={styles.animalsContainer}>
+      <div className={styles.cardsContainer}>
         <div className={styles.inputContainer}>
-          <h1>Animals</h1>
+          <h1>{category.name}</h1>
           <div>
             <label htmlFor="numbreOfCards">
               Selet how many cards of animals to display
@@ -34,7 +39,11 @@ function Animals({
               <option value="5">5</option>
             </select>
           </div>
-          <input type="text" placeholder="Search" onChange={searchHandler} />
+          <input
+            type="text"
+            placeholder="Search"
+            onChange={props.searchHandler}
+          />
         </div>
 
         <ul
@@ -42,14 +51,18 @@ function Animals({
           style={{ gridTemplateColumns: `repeat(${quantity}, 1fr)` }}
         >
           {" "}
-          {filteredAnimals.length !== 0 ? (
-            filteredAnimals.map((animal) => (
+          {filteredArray.length !== 0 ? (
+            filteredArray.map((el) => (
               <Card
-                {...animal}
-                key={animal.name}
-                click={() => removeFunction(animal.name)}
-                addLikes={() => likeHandler(animal.name, "add")}
-                removeLikes={() => likeHandler(animal.name, "remove")}
+                {...el}
+                key={el.name}
+                click={() => props.removeFunction(el.name, urlParams.category)}
+                addLikes={() =>
+                  props.likeHandler(el.name, "add", urlParams.category)
+                }
+                removeLikes={() =>
+                  props.likeHandler(el.name, "remove", urlParams.category)
+                }
                 quantity={quantity}
               />
             ))
@@ -67,4 +80,4 @@ function Animals({
   );
 }
 
-export default Animals;
+export default CategoryPage;
