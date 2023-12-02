@@ -2,23 +2,24 @@
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 
-const Card = ({ name, likes, click, addLikes, removeLikes, id }) => {
+const Card = ({ name, likes, click, addLikes, removeLikes }) => {
+  console.log(name, likes);
   return (
-    <li className="animalCard">
+    <li className={styles.card}>
       <div>
         <img
-          className="image"
+          className={styles.image}
           src={`https://source.unsplash.com/400x400/?${name}`}
           alt={name}
         />
       </div>
 
-      <div className="details">
+      <div className={styles.details}>
         <h2>{name}</h2>
         <span
           id={styles.closeCard}
           onClick={click}
-          className="material-symbols-outlined close"
+          className="material-symbols-outlined"
         >
           close
         </span>
@@ -27,7 +28,7 @@ const Card = ({ name, likes, click, addLikes, removeLikes, id }) => {
             <span className="material-symbols-outlined">heart_minus</span>
           </button>
 
-          <div className="likes_container">
+          <div className={styles.likes_container}>
             <span className="likes">{likes}</span>
             <span className="material-symbols-outlined">
               {likes >= 0 ? "favorite" : "heart_broken"}

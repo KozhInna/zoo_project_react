@@ -1,6 +1,14 @@
 #closeCard:hover {
   cursor: pointer;
 }
+#closeCard {
+  background-color: aliceblue;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+}
+
 .likesInfoBox {
   display: flex;
 
@@ -17,4 +25,29 @@
 }
 .likesInfoBox button:hover {
   cursor: pointer;
+}
+.card {
+  border-radius: 15px;
+  position: relative;
+}
+.image {
+  width: 100%;
+  display: block;
+  border-radius: 15px 15px 0 0;
+  max-height: 80vh;
+}
+
+.details {
+  padding: 1rem;
+  text-align: center;
+  background-color: white;
+  color: #433f3f;
+}
+.details > h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.likes_container {
+  display: inline;
+  flex: 0 0 100px;
 }
