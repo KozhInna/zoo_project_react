@@ -1,36 +1,49 @@
 .containerFrontpage {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   height: 100vh;
 }
-
-.animalsFrontpage,
-.birdsFrontpage {
-  display: flex;
-  align-items: top;
-  justify-content: center;
-  width: 50%;
-
-  font-size: 3rem;
-  font-weight: bold;
+.animals,
+.birds,
+.fishes,
+.reptiles {
+  max-width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
 }
-.animalsFrontpage a,
-.birdsFrontpage a {
-  text-decoration: none;
-  color: #000;
-}
-.animalsFrontpage {
+.animals {
   background-image: url("https://source.unsplash.com/random/?bear");
-  background-size: cover;
-  height: 100%;
-  background-position: center;
 }
-.birdsFrontpage {
+.birds {
   background-image: url("https://source.unsplash.com/random/?owl");
-  background-position: center;
-  background-size: cover;
-  height: 100%;
 }
-.animalsFrontpage a:hover,
-.birdsFrontpage a:hover {
+.fishes {
+  background-image: url("https://source.unsplash.com/random/?fishes");
+}
+.reptiles {
+  background-image: url("https://source.unsplash.com/random/?reptiles");
+}
+.animals a,
+.birds a,
+.fishes a,
+.reptiles a {
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 3rem;
+  font-weight: 700;
+  opacity: 1;
   color: white;
+}
+
+.animals a:hover,
+.birds a:hover,
+.fishes a:hover,
+.reptiles a:hover {
+  cursor: pointer;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 15px;
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { animals, birds } from "./animalsList";
+import { animals, birds, fishes, reptiles } from "./animalsList";
 import Home from "./routes/Home";
 import Root from "./routes/Root";
 import About from "./routes/About";
@@ -9,7 +9,12 @@ import CategoryPage from "./routes/CategoryPage";
 import SinglePage from "./routes/SinglePage";
 
 function App() {
-  const [zoo, setZoo] = useState({ animals: animals, birds: birds });
+  const [zoo, setZoo] = useState({
+    animals: animals,
+    birds: birds,
+    fishes: fishes,
+    reptiles: reptiles,
+  });
   const [search, setSearch] = useState("");
 
   function removeFunction(name, category) {

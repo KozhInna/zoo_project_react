@@ -30,6 +30,16 @@ const Header = ({ resetSearch }) => {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/fishes" onClick={resetSearch}>
+              Fishes
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/reptiles" onClick={resetSearch}>
+              Reptiles
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/about">About</NavLink>
           </li>
         </ul>
