@@ -1,7 +1,11 @@
+import { useParams } from "react-router-dom";
+import styles from "./CategoryPage.module.css";
+
+/* import styles from "./Animals.module.css"; */
 import Card from "../components/Card";
-import styles from "./Animals.module.css";
 import { useState } from "react";
 
+<<<<<<< HEAD:src/routes/Animals.jsx
 <<<<<<< Updated upstream:src/routes/Animals.jsx
 function Animals({
   search,
@@ -27,12 +31,26 @@ function CategoryPage(props) {
 
   /* console.log("filteredArray", filteredArray); */
 >>>>>>> Stashed changes:src/routes/CategoryPage.jsx
+=======
+function CategoryPage(props) {
+  console.log("props", props);
+  const urlParams = useParams();
+  console.log("url", urlParams);
+  const category = props[urlParams.category];
+  console.log("category", category);
+
+  const filteredArray = category.filter((el) =>
+    el.name.toLowerCase().includes(props.search)
+  );
+
+  console.log("filteredArray", filteredArray);
+>>>>>>> a203fb122c7b498b747beb11eceacdc15ea0b1c0:src/routes/CategoryPage.jsx
   const [quantity, setQuantity] = useState(5);
   return (
     <>
-      <div className={styles.animalsContainer}>
+      <div className={styles.cardsContainer}>
         <div className={styles.inputContainer}>
-          <h1>Animals</h1>
+          <h1>{category.name}</h1>
           <div>
             <label htmlFor="numbreOfCards">
               Selet how many cards of animals to display
@@ -49,7 +67,11 @@ function CategoryPage(props) {
               <option value="5">5</option>
             </select>
           </div>
-          <input type="text" placeholder="Search" onChange={searchHandler} />
+          <input
+            type="text"
+            placeholder="Search"
+            onChange={props.searchHandler}
+          />
         </div>
 
         <ul
@@ -57,9 +79,10 @@ function CategoryPage(props) {
           style={{ gridTemplateColumns: `repeat(${quantity}, 1fr)` }}
         >
           {" "}
-          {filteredAnimals.length !== 0 ? (
-            filteredAnimals.map((animal) => (
+          {filteredArray.length !== 0 ? (
+            filteredArray.map((el) => (
               <Card
+<<<<<<< HEAD:src/routes/Animals.jsx
 <<<<<<< Updated upstream:src/routes/Animals.jsx
                 {...animal}
                 key={animal.name}
@@ -70,6 +93,10 @@ function CategoryPage(props) {
                 {...el}
                 key={el.name}
                 category={urlParams.category}
+=======
+                {...el}
+                key={el.name}
+>>>>>>> a203fb122c7b498b747beb11eceacdc15ea0b1c0:src/routes/CategoryPage.jsx
                 click={() => props.removeFunction(el.name, urlParams.category)}
                 addLikes={() =>
                   props.likeHandler(el.name, "add", urlParams.category)
@@ -77,7 +104,10 @@ function CategoryPage(props) {
                 removeLikes={() =>
                   props.likeHandler(el.name, "remove", urlParams.category)
                 }
+<<<<<<< HEAD:src/routes/Animals.jsx
 >>>>>>> Stashed changes:src/routes/CategoryPage.jsx
+=======
+>>>>>>> a203fb122c7b498b747beb11eceacdc15ea0b1c0:src/routes/CategoryPage.jsx
                 quantity={quantity}
               />
             ))
@@ -95,4 +125,4 @@ function CategoryPage(props) {
   );
 }
 
-export default Animals;
+export default CategoryPage;

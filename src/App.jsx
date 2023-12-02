@@ -1,14 +1,10 @@
 import { useState } from "react";
-import { animals, birds } from "./animalsList"; //named export
+/* import { animals, birds } from "./animalsList"; //named export */
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Home from "./routes/Home";
 import Root from "./routes/Root";
-import Birds from "./routes/Birds";
-import Animals from "./routes/Animals";
 import About from "./routes/About";
-import SingleAnimal from "./routes/SingleAnimal";
-import SingleBird from "./routes/SingleBird";
 import PageNotFound from "./routes/PageNotFound";
 import CategoryPage from "./routes/CategoryPage";
 /* import SinglePage from "./routes/CategoryPage"; */
@@ -27,15 +23,12 @@ const birds = [
 ];
 
 function App() {
-  const [animalList, setAnimals] = useState(animals);
-  const [birdList, setBirds] = useState(birds);
+  const [zoo, setZoo] = useState({ animals: animals, birds: birds });
   const [search, setSearch] = useState("");
 
-  function removeFunction(name) {
-    const updatedArray = birdList.filter((bird) => bird.name !== name);
-    const updatedArray2 = animalList.filter((animal) => animal.name !== name);
-    setBirds(updatedArray);
-    setAnimals(updatedArray2);
+  function removeFunction(name, category) {
+    const updatedArray = zoo[category].filter((el) => el.name !== name);
+    setZoo({ ...zoo, [category]: updatedArray });
   }
 
   function searchHandler(e) {
@@ -45,34 +38,20 @@ function App() {
     setSearch("");
   }
 
-  function likeHandler(name, action) {
-    const updatedArr = birdList.map((bird) => {
-      if (bird.name === name) {
+  function likeHandler(name, action, category) {
+    const updatedArr = zoo[category].map((el) => {
+      if (el.name === name) {
         if (action === "add") {
-          return { ...bird, likes: bird.likes + 1 };
+          return { ...el, likes: el.likes + 1 };
         }
         if (action === "remove") {
-          return { ...bird, likes: bird.likes - 1 };
+          return { ...el, likes: el.likes - 1 };
         }
       } else {
-        return bird;
+        return el;
       }
     });
-    setBirds(updatedArr);
-
-    const updatedArr2 = animalList.map((animal) => {
-      if (animal.name === name) {
-        if (action === "add") {
-          return { ...animal, likes: animal.likes + 1 };
-        }
-        if (action === "remove") {
-          return { ...animal, likes: animal.likes - 1 };
-        }
-      } else {
-        return animal;
-      }
-    });
-    setAnimals(updatedArr2);
+    setZoo({ ...zoo, [category]: updatedArr });
   }
 
   const router = createBrowserRouter([
@@ -83,11 +62,20 @@ function App() {
       children: [
         { path: "/", element: <Home /> },
         {
-          path: "animals/:name",
-          element: <SingleAnimal animalList={animalList} />,
+          path: "/:category",
+          element: (
+            <CategoryPage
+              {...zoo}
+              removeFunction={removeFunction}
+              search={search}
+              likeHandler={likeHandler}
+              searchHandler={searchHandler}
+            />
+          ),
         },
-        { path: "birds/:name", element: <SingleBird birdList={birdList} /> },
+        /*  { path: ":category/:name", element: <SinglePage {...zoo} /> }, */
 
+<<<<<<< HEAD
         {
           path: "/birds",
           element: (
@@ -114,6 +102,8 @@ function App() {
         },
         /*  { path: ":category/:name", element: <SinglePage {...zoo} /> }, */
 
+=======
+>>>>>>> a203fb122c7b498b747beb11eceacdc15ea0b1c0
         { path: "/about", element: <About /> },
       ],
     },
