@@ -5,6 +5,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Roboto Mono", sans-serif;
@@ -51,10 +54,10 @@ input {
   font-family: inherit;
   padding: 5px;
 }
-
+/* 
 button {
   display: inline;
-}
+} */
 .hearts {
   color: red;
   font-weight: 900;

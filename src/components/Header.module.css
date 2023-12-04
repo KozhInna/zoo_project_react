@@ -6,6 +6,12 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.06);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  z-index: 99;
 }
 
 .header ul {

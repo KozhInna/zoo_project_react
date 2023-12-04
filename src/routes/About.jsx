@@ -1,4 +1,13 @@
+import styles from "./About.module.css";
+
 function About() {
-  return <h1>About section will be here</h1>;
+  return (
+    <>
+      <div className={styles.aboutContainer}>
+        <h1>This images will make your day...</h1>
+        <p></p>
+      </div>
+    </>
+  );
 }
 export default About;

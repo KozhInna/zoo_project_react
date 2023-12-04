@@ -4,12 +4,12 @@ import Card from "../components/Card";
 import { useState } from "react";
 
 function CategoryPage(props) {
-  /*   console.log("props", props); */
+  console.log("props", props);
   const urlParams = useParams();
-  /*   console.log("url", urlParams);
-   */ const category = props[urlParams.category];
-  /*   console.log("category", category);
-   */
+  console.log("url", urlParams);
+  const category = props[urlParams.category];
+  console.log("category", category);
+
   const filteredArray = category.filter((el) =>
     el.name.toLowerCase().includes(props.search)
   );
@@ -20,10 +20,16 @@ function CategoryPage(props) {
     <>
       <div className={styles.cardsContainer}>
         <div className={styles.inputContainer}>
-          <h1>{category.name}</h1>
+          <span>
+            <span className={styles.numberOfCards}>{category.length} </span>
+            creatures
+          </span>
           <div>
             <label htmlFor="numbreOfCards">
-              Selet how many cards of animals to display
+              How many photoes of{" "}
+              {urlParams.category.charAt(0).toUpperCase() +
+                urlParams.category.slice(1)}{" "}
+              to show in one line (2-5)
             </label>
             <select
               id="numbreOfCards"

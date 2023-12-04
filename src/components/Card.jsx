@@ -13,7 +13,7 @@ const Card = ({ name, likes, click, addLikes, removeLikes }) => {
       </div>
 
       <div className={styles.details}>
-        <h2>{name}</h2>
+        <h2>{name.charAt(0).toLowerCase() + name.slice(1)}</h2>
         <span
           id={styles.closeCard}
           onClick={click}
