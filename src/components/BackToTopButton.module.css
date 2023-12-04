@@ -1,0 +1,15 @@
+.backToTopButton {
+  position: fixed;
+  right: 2rem;
+  bottom: 4rem;
+  height: 50px;
+  width: 50px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}

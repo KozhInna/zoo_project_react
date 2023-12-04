@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import styles from "./CategoryPage.module.css";
 import Card from "../components/Card";
 import { useState } from "react";
+import BackToTopButton from "../components/BackToTopButton";
 
 function CategoryPage(props) {
   console.log("props", props);
@@ -78,6 +79,7 @@ function CategoryPage(props) {
             </ul>
           )}
         </ul>
+        <BackToTopButton />
       </div>
     </>
   );
