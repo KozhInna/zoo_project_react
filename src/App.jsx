@@ -27,6 +27,7 @@ function App() {
   }
   function resetSearch() {
     setSearch("");
+    console.log("reset");
   }
 
   function likeHandler(name, action, category) {

@@ -14,6 +14,7 @@ function BackToTopButton() {
     });
   }),
     [];
+
   const scrollUp = () => {
     window.scrollTo({
       top: 0,

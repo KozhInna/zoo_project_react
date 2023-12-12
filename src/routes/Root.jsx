@@ -2,10 +2,10 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { Outlet } from "react-router-dom";
 
-function Root({ resetSearch }) {
+function Root(props) {
   return (
     <>
-      <Header resetSearch={resetSearch} />
+      <Header {...props} />
       <Outlet />
       <Footer />
     </>
