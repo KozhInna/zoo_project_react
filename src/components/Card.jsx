@@ -1,7 +1,9 @@
+import { useState } from "react";
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 
 const Card = ({ name, likes, click, addLikes, removeLikes }) => {
+  const [clicked, setClicked] = useState(false);
   return (
     <li className={styles.card}>
       <div>
@@ -22,18 +24,28 @@ const Card = ({ name, likes, click, addLikes, removeLikes }) => {
           close
         </span>
         <div className={styles.likesInfoBox}>
-          <button onClick={removeLikes}>
+          <button
+            onClick={() => {
+              removeLikes();
+              setClicked(true);
+            }}
+          >
             <span className="material-symbols-outlined">heart_minus</span>
           </button>
 
           <div className={styles.likes_container}>
-            <span className="likes">{likes}</span>
+            <span className={styles.likes}>{clicked && likes}</span>
             <span className="material-symbols-outlined hearts">
               {likes >= 0 ? "favorite" : "heart_broken"}
             </span>
           </div>
 
-          <button onClick={addLikes}>
+          <button
+            onClick={() => {
+              addLikes();
+              setClicked(true);
+            }}
+          >
             <span className="material-symbols-outlined">heart_plus</span>
           </button>
         </div>
