@@ -12,6 +12,7 @@ html {
 body {
   font-family: "Roboto Mono", sans-serif;
   color: #444;
+  height: calc(100% - 2rem);
 
   background-color: #f4a226;
 }

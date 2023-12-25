@@ -3,7 +3,6 @@ import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 
 const Card = ({ name, likes, click, addLikes, removeLikes }) => {
-  const [clicked, setClicked] = useState(false);
   return (
     <li className={styles.card}>
       <div>
@@ -34,7 +33,7 @@ const Card = ({ name, likes, click, addLikes, removeLikes }) => {
           </button>
 
           <div className={styles.likes_container}>
-            <span className={styles.likes}>{clicked && likes}</span>
+            <span className={styles.likes}>{likes}</span>
             <span className="material-symbols-outlined hearts">
               {likes >= 0 ? "favorite" : "heart_broken"}
             </span>
@@ -43,7 +42,6 @@ const Card = ({ name, likes, click, addLikes, removeLikes }) => {
           <button
             onClick={() => {
               addLikes();
-              setClicked(true);
             }}
           >
             <span className="material-symbols-outlined">heart_plus</span>

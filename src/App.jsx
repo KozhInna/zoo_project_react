@@ -16,6 +16,7 @@ function App() {
     reptiles: reptiles,
   });
   const [search, setSearch] = useState("");
+  const [clicked, setClicked] = useState(false);
 
   function removeFunction(name, category) {
     const updatedArray = zoo[category].filter((el) => el.name !== name);

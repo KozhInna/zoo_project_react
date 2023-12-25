@@ -16,7 +16,7 @@ const SinglePage = (props) => {
           <h2>{data.name.toUpperCase()}</h2>
 
           <div className={styles.likes}>
-            <span className="likes">{data.likes}</span>
+            <span className={styles.likesNumber}>{data.likes}</span>
             <span className="material-symbols-outlined hearts">
               {data.likes >= 0 ? "favorite" : "heart_broken"}
             </span>
