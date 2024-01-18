@@ -22,12 +22,7 @@ function CategoryPage(props) {
           creatures
         </span>
         <div>
-          <label htmlFor="numbreOfCards">
-            How many photoes of{" "}
-            {urlParams.category.charAt(0).toUpperCase() +
-              urlParams.category.slice(1)}{" "}
-            to display per row (2-5)
-          </label>
+          <label htmlFor="numbreOfCards">Images per row</label>
           <select
             id="numbreOfCards"
             className={styles.optionsWindow}
@@ -49,7 +44,7 @@ function CategoryPage(props) {
       </div>
 
       <ul
-        className="cards"
+        className={styles.cards}
         style={{ gridTemplateColumns: `repeat(${quantity}, 1fr)` }}
       >
         {filteredArray.length !== 0 ? (

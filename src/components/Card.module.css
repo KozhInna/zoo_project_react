@@ -70,3 +70,25 @@
 .likes {
   font-size: 2rem;
 }
+@media (max-width: 1100px) {
+  .details > h2 {
+    font-size: 1.2rem;
+  }
+  .likes {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 990px) {
+  .likes {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 900px) {
+  .likes {
+    font-size: 1.4rem;
+  }
+  .likesInfoBox button {
+    padding: 8px;
+  }
+}

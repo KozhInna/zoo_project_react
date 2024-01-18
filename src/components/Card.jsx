@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 
@@ -26,7 +25,6 @@ const Card = ({ name, likes, click, addLikes, removeLikes }) => {
           <button
             onClick={() => {
               removeLikes();
-              setClicked(true);
             }}
           >
             <span className="material-symbols-outlined">heart_minus</span>

@@ -56,3 +56,9 @@
 .likesNumber {
   font-size: 1.5rem;
 }
+@media (max-width: 860px) {
+  .oneAnimalBox section {
+    grid-template-columns: none;
+    justify-items: center;
+  }
+}

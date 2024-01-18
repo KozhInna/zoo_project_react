@@ -25,18 +25,6 @@ body {
   display: grid;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  justify-content: space-between;
-  align-items: center;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
 main {
   width: 100%;
   padding: 20px;
@@ -53,11 +41,22 @@ input {
   font-family: inherit;
   padding: 5px;
 }
-/* 
-button {
-  display: inline;
-} */
 .hearts {
   color: red;
   font-weight: 900;
+}
+@media (max-width: 1100px) {
+  .material-symbols-outlined {
+    font-size: 20px;
+  }
+}
+@media (max-width: 990px) {
+  .material-symbols-outlined {
+    font-size: 17px;
+  }
+}
+@media (max-width: 840px) {
+  .material-symbols-outlined {
+    font-size: 15px;
+  }
 }
