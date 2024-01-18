@@ -26,7 +26,7 @@ function CategoryPage(props) {
             How many photoes of{" "}
             {urlParams.category.charAt(0).toUpperCase() +
               urlParams.category.slice(1)}{" "}
-            to show in one line (2-5)
+            to display per row (2-5)
           </label>
           <select
             id="numbreOfCards"

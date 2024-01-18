@@ -3,7 +3,7 @@
 ## General Information
 
 Zoo app project for ReactJS course at Business College Helsinki in November 2023.
-Animal images displayed by a category, sourced from [Unsplash](https://unsplash.com/)
+Animal images displayed by a category, sourced from [Unsplash](https://unsplash.com/).
 
 ## Technologies Used
 
